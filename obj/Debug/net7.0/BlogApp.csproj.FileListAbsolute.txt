@@ -63,3 +63,5 @@ C:\Users\BRIGHT\Desktop\Br\Bright-502\mvc\BlogApp\BlogApp\obj\Debug\net7.0\BlogA
 C:\Users\BRIGHT\Desktop\Br\Bright-502\mvc\BlogApp\BlogApp\obj\Debug\net7.0\ref\BlogApp.dll
 C:\Users\BRIGHT\Desktop\Br\Bright-502\mvc\BlogApp\BlogApp\obj\Debug\net7.0\BlogApp.RazorAssemblyInfo.cache
 C:\Users\BRIGHT\Desktop\Br\Bright-502\mvc\BlogApp\BlogApp\obj\Debug\net7.0\BlogApp.RazorAssemblyInfo.cs
+C:\Users\BRIGHT\Desktop\Br\Bright-502\mvc\BlogApp\BlogApp\bin\Debug\net7.0\libman.json
+C:\Users\BRIGHT\Desktop\Br\Bright-502\mvc\BlogApp\BlogApp\bin\Debug\net7.0\BlogApp.staticwebassets.runtime.json

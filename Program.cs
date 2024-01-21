@@ -1,3 +1,4 @@
+using BlogApp.Data.Abstract;
 using BlogApp.Data.Concrete.EfCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,8 +12,11 @@ builder.Services.AddDbContext<BlogContext>(options => {
     options.UseSqlite(connectionString);
 });
 
-var app = builder.Build();
+builder.Services.AddScoped<IPostRepository, EfPostRepository>();
+builder.Services.AddScoped<ITagRepository, EfTagRepository>();
 
+var app = builder.Build();
+app.UseStaticFiles();
 SeedData.TestVerileriniDoldur(app);
 
 
