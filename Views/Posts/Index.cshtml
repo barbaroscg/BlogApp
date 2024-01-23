@@ -1,10 +1,11 @@
-@model PostViewModel
+<!-- @model PostViewModel -->
+@model Posts
 
 <div class="row">
     <div class="col-lg-8">
         <div class="bg-white p-4">
             <h1 class="h4 mb-4">Popular Posts</h1>
-            @foreach(var item in Model.Posts)
+            @foreach(var item in Model)
             {
                 <div class="card bg-transparent border-0 mb-3">
                     <div class="row">
@@ -12,7 +13,7 @@
                             <img src="~/img/@item.Image" class="img-fluid rounded" alt="">
                         </div>
                         <div class="col-8">
-                            <h5><a href="#" class="btn-link fw-bold">@item.Title</a></h5>
+                            <h5><a  href="/posts/@item.Url" class="btn-link fw-bold">@item.Title</a></h5>
                             <p>@item.Content</p>
                             <a href="#" class="badge bg-danger bg-opacity-10 text-danger mb-2 fw-bold">Web Development</a>
                         </div>

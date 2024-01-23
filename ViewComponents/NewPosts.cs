@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BlogApp.Data.Abstract;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace BlogApp.ViewComponents
 {
@@ -15,14 +16,14 @@ namespace BlogApp.ViewComponents
             _postRepository = postRepository;
         }
 
-        public IViewComponentResult Invoke()
+        public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View(
+            return View( await
                 _postRepository
                 .Posts
                 .OrderByDescending(x => x.PublishedOn)
                 .Take(5)
-                .ToList()
+                .ToListAsync()
             );
         }
     }
