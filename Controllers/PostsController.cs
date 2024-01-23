@@ -30,7 +30,7 @@ namespace BlogApp.Controllers
                 new PostViewModel
                 {
                     Posts = _postrepository.Posts.ToList(),
-                    Tags = _tagRepository.Tags.ToList()
+                    // Tags = _tagRepository.Tags.ToList()
                 }
             );
         }
