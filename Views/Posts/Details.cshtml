@@ -4,12 +4,56 @@
         <div class="bg-white p-4">
             <h1 class="h4 mb-4">@Model.Title</h1>
             <div class="tags">
-                <a href="" class="badge bg-primary bg-opacity-10 text-primary mb-2 fw-bold">React</a>
-                <a href="" class="badge bg-primary bg-opacity-10 text-primary mb-2 fw-bold">Web Dev</a>
+                @foreach(var tag in Model.Tags)
+                {
+                    <a href="" class="badge bg-@tag.Color bg-opacity-10 text-@tag.Color mb-2 fw-bold">@tag.Text</a>
+                }
+                
             </div>
             <img src="~/img/@Model.Image" class="img-fluid rounded" alt="">
             <div>
                 <p>@Model.Content</p>
+            </div>
+            <div class="bg-white">
+                <div class="card border-0">
+                    <div class="card-header pb-0">
+                        <h4>@Model.Comments.Count() adet yorum</h4>
+                    </div>
+                    <div class="card-body">
+                        @foreach(var comment in Model.Comments)
+                        {
+                            <div class="my-4 d-flex">
+                                <img src="/img/@comment.User.Image" alt="" class="rounded-circle float-start me-3 avatar">
+                                <div>
+                                    <div class="mb-2">
+                                        <h6>@comment.User.UserName</h6>
+                                        <span>@comment.PublishedOn</span>
+                                    </div>
+                                    <p>@comment.Text</p>
+                                </div>
+                            </div>
+                        }
+                        <hr class="my-4">
+                        <div>
+                            <h4>Yorum Ekle</h4>
+                            <form action="/posts/AddComment" method="post">
+                                <input type="hidden" name="PostId" value="@Model.PostId">
+                                <input type="hidden" name="Url" value="@Model.Url">
+                                <div class="mb-3">
+                                    <label for="UserName" class="form-label">UserName</label>
+                                    <input type="text" name="UserName" id="UserName" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Text" class="form-label">Yorum</label>
+                                    <textarea type="text" name="Text" id="Text" cols="3" class="form-control"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
